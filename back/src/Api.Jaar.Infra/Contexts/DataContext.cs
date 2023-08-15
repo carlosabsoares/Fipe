@@ -10,7 +10,7 @@ namespace Api.Jaar.Infra
         {
         }
 
-        public DbSet<InformacaoVeiculoEntity> InformacoesVeiculos { get; set; }
+        public DbSet<InfoVeiculoEntity> InformacoesVeiculos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

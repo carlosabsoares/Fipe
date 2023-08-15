@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Api.Jaar.Domain\Api.Jaar.Domain.csproj" />
+    <ProjectReference Include="..\Api.Jaar.Shared\Api.Jaar.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,10 +21,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <!--<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />-->
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

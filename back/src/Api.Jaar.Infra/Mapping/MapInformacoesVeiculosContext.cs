@@ -7,16 +7,16 @@ namespace Api.Jaar.Infra.Mapping
     {
         public static void MapInformacoesVeiculos(this DataContext context, ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<InformacaoVeiculoEntity>().ToTable("InformacoesVeiculos");
+            modelBuilder.Entity<InfoVeiculoEntity>().ToTable("InformacoesVeiculos");
 
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.Id);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.Valor);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.Marca);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.AnoModelo);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.TipoCombustivel);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.CodigoFipe);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.TipoVeiculo);
-            modelBuilder.Entity<InformacaoVeiculoEntity>().HasKey(x => x.TipoCombustivel);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.Id);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.Valor);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.Marca);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.AnoModelo);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.TipoCombustivel);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.CodigoFipe);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.TipoVeiculo);
+            modelBuilder.Entity<InfoVeiculoEntity>().HasKey(x => x.TipoCombustivel);
         }
     }
 }

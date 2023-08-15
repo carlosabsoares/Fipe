@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Api.Jaar.Domain.Servicos;
+using Api.Jaar.Infra.Services;
+using Microsoft.Extensions.DependencyInjection;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Api.Jaar.Api.DependencyMap
@@ -9,6 +11,8 @@ namespace Api.Jaar.Api.DependencyMap
         {
             // ----- SERVICES --------
             services.AddHttpClient();
+
+            services.AddScoped<IServiceBrasilApi, ServiceBrasilApi>();
 
             // Biblioteca para manipulação do JWT
             //services.AddScoped<ICommandHandler<PostUserValidateCommand>>(sp =>

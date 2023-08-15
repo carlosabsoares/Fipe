@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Api.Jaar.Domain.Entities
 {
-    public class InformacaoVeiculoEntity : Entity
+    public class InfoVeiculoEntity : Entity
     {
         public decimal Valor { get; set; } = 0;
 

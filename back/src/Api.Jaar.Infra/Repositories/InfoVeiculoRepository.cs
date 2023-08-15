@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Api.Jaar.Infra.Repositories
 {
-    public class InformacoesVeiculoRepository : CudRepository, IInformacoesVeiculoRepository
+    public class InfoVeiculoRepository : CudRepository, IInfoVeiculoRepository
     {
         private readonly DataContext _context;
 
-        public InformacoesVeiculoRepository(DataContext context) : base(context)
+        public InfoVeiculoRepository(DataContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<IList<InformacaoVeiculoEntity>> FindByCodigoAno(string codigoFipe, int anoModelo)
+        public async Task<IList<InfoVeiculoEntity>> FindByCodigoAno(string codigoFipe, int anoModelo)
         {
             return await _context.InformacoesVeiculos.AsNoTracking()
                                            .Where(x => x.CodigoFipe.Equals(codigoFipe)

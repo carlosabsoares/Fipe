@@ -8,11 +8,7 @@ namespace Api.Jaar.Api.DependencyMap
     {
         public DomainToDtoMap()
         {
-            CreateMap<PostIncluiPlacaCommand, InfoVeiculoEntity>()
-                .ForMember(dest=> dest.AnoModelo, act=> act.MapFrom(src => src.AnoModelo))
-                .ForMember(dest => dest.CodigoFipe, act => act.MapFrom(src => src.CodigoFipe))
-                .ForMember(dest => dest.Placa, act => act.MapFrom(src => src.Placa))
-                ;
+
         }
     }
 }

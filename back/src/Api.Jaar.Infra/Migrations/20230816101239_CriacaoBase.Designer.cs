@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Jaar.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230815200411_criacaoBase")]
-    partial class criacaoBase
+    [Migration("20230816101239_CriacaoBase")]
+    partial class CriacaoBase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,36 +24,30 @@ namespace Api.Jaar.Infra.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Api.Jaar.Domain.Entities.InformacaoVeiculoEntity", b =>
+            modelBuilder.Entity("Api.Jaar.Domain.Entities.InfoVeiculoEntity", b =>
                 {
-                    b.Property<int>("TipoCombustivel")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AnoModelo")
                         .HasColumnType("int");
 
                     b.Property<string>("CodigoFipe")
+                        .IsRequired()
                         .HasMaxLength(8)
                         .HasColumnType("nvarchar(8)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<string>("Placa")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
-                    b.Property<string>("Marca")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
+                    b.HasKey("Id");
 
-                    b.Property<string>("Modelo")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<int>("TipoVeiculo")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("TipoCombustivel");
+                    b.HasIndex("Id");
 
                     b.ToTable("InformacoesVeiculos", (string)null);
                 });

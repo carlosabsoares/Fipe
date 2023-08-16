@@ -46,6 +46,8 @@ namespace Api.Jaar.Infra.Migrations
 
                     b.HasIndex("Id");
 
+                    b.HasIndex("Placa");
+
                     b.ToTable("InformacoesVeiculos", (string)null);
                 });
 #pragma warning restore 612, 618

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Jaar.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230816101239_CriacaoBase")]
+    [Migration("20230816102745_CriacaoBase")]
     partial class CriacaoBase
     {
         /// <inheritdoc />
@@ -48,6 +48,8 @@ namespace Api.Jaar.Infra.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Id");
+
+                    b.HasIndex("Placa");
 
                     b.ToTable("InformacoesVeiculos", (string)null);
                 });

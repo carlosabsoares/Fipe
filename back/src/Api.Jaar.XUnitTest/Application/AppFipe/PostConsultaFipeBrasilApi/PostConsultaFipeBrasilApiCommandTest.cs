@@ -1,9 +1,4 @@
 ﻿using Api.Jaar.Application.Commands.AppFipe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Api.Jaar.XUnitTest.Application.AppFipe.PostConsultaFipeBrasilApi
@@ -27,9 +22,9 @@ namespace Api.Jaar.XUnitTest.Application.AppFipe.PostConsultaFipeBrasilApi
         }
 
         [Theory]
-        [InlineData(0,1234)]
+        [InlineData(0, 1234)]
         [InlineData(1234, 0)]
-        [InlineData(0,0)]
+        [InlineData(0, 0)]
         public void Verificar_PostConsultaFipeBrasilApiCommand_InValido(int param1, int param2)
         {
             PostConsultaFipeBrasilApiCommand validateCommand = new PostConsultaFipeBrasilApiCommand();
@@ -44,6 +39,5 @@ namespace Api.Jaar.XUnitTest.Application.AppFipe.PostConsultaFipeBrasilApi
             Assert.Equal(param1, validateCommand.AnoModelo);
             Assert.Equal(param2, validateCommand.CodigoFipe);
         }
-
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Api.Jaar.Domain.Entities;
 using Api.Jaar.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Api.Jaar.Infra.Repositories
@@ -17,11 +14,10 @@ namespace Api.Jaar.Infra.Repositories
             _context = context;
         }
 
-        public async Task<IList<InfoVeiculoEntity>> FindByCodigoAno(string codigoFipe, int anoModelo)
+        public async Task<InfoVeiculoEntity> FindByPlaca(string placa)
         {
             return await _context.InformacoesVeiculos.AsNoTracking()
-                                           .Where(x => x.CodigoFipe.Equals(codigoFipe)
-                                                                  && x.AnoModelo.Equals(anoModelo)).ToListAsync();
+                                           .FirstOrDefaultAsync(x => x.Placa.Equals(placa));
         }
     }
 }

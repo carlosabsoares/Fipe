@@ -1,12 +1,5 @@
-﻿using Api.Jaar.Application.Commands.AppFipe;
-using Api.Jaar.Domain.Responses;
-using Api.Jaar.Domain.Servicos;
+﻿using Api.Jaar.Domain.Servicos;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -33,7 +26,7 @@ namespace Api.Jaar.XUnitTest.Application.AppFipe.PostConsultaFipeBrasilApi
             //    Valor = "R$ 3.037,00",
             //    Combustivel = "0",
             //    CodigoFipe = "0"
-                
+
             //}
 
             //mockService.Setup(x=> x.BrasilApiPreco()).Returns(command);

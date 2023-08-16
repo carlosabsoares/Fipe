@@ -1,5 +1,4 @@
-﻿using Api.Jaar.Domain.Entities.Enum;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Api.Jaar.Domain.Entities
 {

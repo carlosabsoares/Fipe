@@ -29,6 +29,11 @@ namespace Api.Jaar.Infra.Migrations
                 name: "IX_InformacoesVeiculos_Id",
                 table: "InformacoesVeiculos",
                 column: "Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InformacoesVeiculos_Placa",
+                table: "InformacoesVeiculos",
+                column: "Placa");
         }
 
         /// <inheritdoc />

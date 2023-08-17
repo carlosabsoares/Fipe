@@ -1,6 +1,4 @@
-﻿using Api.Jaar.Application.Commands.AppFipe;
-using Api.Jaar.Domain.Entities;
-using AutoMapper;
+﻿using AutoMapper;
 
 namespace Api.Jaar.Api.DependencyMap
 {
@@ -8,7 +6,6 @@ namespace Api.Jaar.Api.DependencyMap
     {
         public DomainToDtoMap()
         {
-
         }
     }
 }

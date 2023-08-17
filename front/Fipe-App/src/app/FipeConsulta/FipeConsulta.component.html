@@ -1,3 +1,51 @@
-<p>
-  FipeConsulta Componente!
-</p>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Consulta por:</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (click)="alterCampos()" checked>
+            <label class="form-check-label" for="flexRadioDefault1">Fipe</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" (click)="alterCampos()" >
+            <label class="form-check-label" for="flexRadioDefault2">Placa</label>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group col-md-8" *ngIf="showPlaca">
+                <label>Código Fipe</label>
+                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+              </div>
+              <div class="form-group col-md-8" *ngIf="showPlaca">
+                <label>Ano</label>
+                <input type="number" class="form-control" placeholder="Server" aria-label="Server">
+              </div>
+
+              <div class="form-group col-md-8" *ngIf="!showPlaca">
+                <label>Placa</label>
+                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div style="display: flex; justify-content: flex-end;">
+              <a href="#" class="btn btn-primary">Consultar</a>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6" *ngIf="showResposta">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>

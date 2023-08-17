@@ -5,7 +5,6 @@ using Api.Jaar.Domain.Repositories;
 using Api.Jaar.Domain.Servicos;
 using AutoMapper;
 using Flunt.Notifications;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -17,7 +16,7 @@ namespace Api.Jaar.Application.Commands.AppFipe
         private readonly IInfoVeiculoRepository _repository;
         private readonly IMapper _mapper;
 
-        public PostIncluiPlacaHandle(IServiceBrasilApi service, 
+        public PostIncluiPlacaHandle(IServiceBrasilApi service,
                                      IInfoVeiculoRepository repository,
                                      IMapper mapper)
         {
@@ -36,7 +35,7 @@ namespace Api.Jaar.Application.Commands.AppFipe
             {
                 var _repoInfoVeiculo = await _repository.FindByPlaca(request.Placa);
 
-                if(_repoInfoVeiculo != null)
+                if (_repoInfoVeiculo != null)
                     return new ResultEvent(true, $"Placa já cadastrada");
 
                 var _responseService = await _service.BrasilApiPreco(request.CodigoFipe,
@@ -45,8 +44,8 @@ namespace Api.Jaar.Application.Commands.AppFipe
                 if (_responseService == null)
                     return new ResultEvent(true, $"Código não localizado");
 
-                var entity = new InfoVeiculoEntity() 
-                { 
+                var entity = new InfoVeiculoEntity()
+                {
                     AnoModelo = _responseService.AnoModelo,
                     CodigoFipe = _responseService.CodigoFipe,
                     Placa = request.Placa

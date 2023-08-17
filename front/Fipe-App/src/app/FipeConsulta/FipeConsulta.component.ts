@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FipeConsultaComponent implements OnInit {
 
+  showPlaca: boolean = true;
+  showResposta: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  alterCampos(){
+    this.showPlaca = !this.showPlaca;
   }
 
 }

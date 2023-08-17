@@ -1,5 +1,4 @@
-﻿using Api.Jaar.Application.Configuration.Commands;
-using Api.Jaar.Application.Configuration.Events;
+﻿using Api.Jaar.Application.Configuration.Events;
 using Api.Jaar.Application.Configuration.Queries;
 using Api.Jaar.Domain.Repositories;
 using Api.Jaar.Domain.Servicos;
@@ -25,6 +24,7 @@ namespace Api.Jaar.Application.Commands.AppFipe
             _repository = repository;
             _mapper = mapper;
         }
+
         public async Task<IEvent> Handle(GetConsultarPlacaQuery request, CancellationToken cancellationToken)
         {
             request.Validate();
@@ -38,7 +38,7 @@ namespace Api.Jaar.Application.Commands.AppFipe
                 if (_repoInfo == null)
                     return new ResultEvent(false, "Placa não localizada ou não cadastrada");
 
-                var _codigoFipe = Convert.ToInt32(_repoInfo.CodigoFipe.Replace("-",""));
+                var _codigoFipe = Convert.ToInt32(_repoInfo.CodigoFipe.Replace("-", ""));
 
                 var _responseService = await _service.BrasilApiPreco(_codigoFipe, _repoInfo.AnoModelo);
 

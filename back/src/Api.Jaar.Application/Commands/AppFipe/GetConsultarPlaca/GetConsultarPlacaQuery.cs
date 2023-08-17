@@ -1,5 +1,4 @@
-﻿using Api.Jaar.Application.Configuration.Commands;
-using Api.Jaar.Application.Configuration.Queries;
+﻿using Api.Jaar.Application.Configuration.Queries;
 using Flunt.Notifications;
 using Flunt.Validations;
 

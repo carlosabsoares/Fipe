@@ -1,5 +1,6 @@
 ﻿using Api.Jaar.Application.Commands.AppFipe;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ namespace Api.Jaar.Api.Controllers
         [FromBody] PostIncluiPlacaCommand command
         )
         {
+
             var result = await _mediator.Send(command);
 
             if (!result.Success)

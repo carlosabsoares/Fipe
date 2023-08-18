@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Api.Jaar.Api.Controllers
 {
+    [ApiController]
+    [Route("v1/[controller]")]
     public class InfoVeiculoController : ControllerBase
     {
         private readonly IMediator _mediator;

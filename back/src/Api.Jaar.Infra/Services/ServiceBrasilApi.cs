@@ -13,6 +13,7 @@ namespace Api.Jaar.Infra.Services
     {
         private readonly HttpClient Http = new();
         private readonly string url = "https://brasilapi.com.br/api/fipe/preco/v1/";
+                                       
 
         public ServiceBrasilApi()
         { }
@@ -20,6 +21,7 @@ namespace Api.Jaar.Infra.Services
         public async Task<BrasilApiResponse> BrasilApiPreco(int fipe, int anoModelo)
         {
             string codeFipe = fipe.ToString().PadLeft(7, '0');
+            BrasilApiResponse brasilApiResponse = new BrasilApiResponse();
 
             try
             {
@@ -29,7 +31,7 @@ namespace Api.Jaar.Infra.Services
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return brasilApiResponse ;
             }
         }
     }

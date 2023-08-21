@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { FipeServicesService } from './fipe-services.service';
+import { FipeServicesService } from './fipe.service';
 
 describe('Service: FipeServices', () => {
   beforeEach(() => {

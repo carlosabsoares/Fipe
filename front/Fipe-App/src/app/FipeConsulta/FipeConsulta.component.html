@@ -4,48 +4,72 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Consulta por:</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (click)="alterCampos()" checked>
-            <label class="form-check-label" for="flexRadioDefault1">Fipe</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" (click)="alterCampos()" >
-            <label class="form-check-label" for="flexRadioDefault2">Placa</label>
-          </div>
-          <br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="radioFipe" (click)="setSearchType('fipe')"  [checked]="searchType === 'fipe'">
+          <label class="form-check-label" for="radioFipe">Fipe</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="radioPlaca" (click)="setSearchType('placa')" [checked]="searchType === 'placa'">
+          <label class="form-check-label" for="radioPlaca">Placa</label>
+        </div>
+        <br>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="card">
             <div class="card-body">
-              <div class="form-group col-md-8" *ngIf="showPlaca">
+              <div class="form-group col-md-8" *ngIf="searchType ==='fipe'">
                 <label>Código Fipe</label>
-                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                <input type="number" class="form-control" formControlName="fipeCode">
               </div>
-              <div class="form-group col-md-8" *ngIf="showPlaca">
+              <div class="form-group col-md-8" *ngIf="searchType ==='fipe'">
                 <label>Ano</label>
-                <input type="number" class="form-control" placeholder="Server" aria-label="Server">
+                <input type="number" class="form-control" formControlName="year">
               </div>
 
-              <div class="form-group col-md-8" *ngIf="!showPlaca">
+              <div class="form-group col-md-8" *ngIf="searchType === 'placa'">
                 <label>Placa</label>
-                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                <input type="text" class="form-control" formControlName="licensePlate">
               </div>
             </div>
           </div>
           <br>
           <div style="display: flex; justify-content: flex-end;">
-
-              <a href="#" class="btn btn-primary" (click)="getConsultaFipe()">Consultar</a>
+            <a href="#" class="btn btn-primary" (click)="onSubmit()">Consultar</a>
           </div>
-
+        </form>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-6" *ngIf="showResposta">
+  <div class="col-sm-6" *ngIf="searchResponse">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Resultado:</h5>
+        <textarea class="jsonTextArea">
+          {{searchResponse | json}}
+        </textarea>
+        <br />
+        <!-- <div *ngIf="searchType === 'placa'">
+          <button class="btn btn-primary">
+            Atualizar
+          </button>
+          &nbsp;
+          <button class="btn btn-danger">
+            Excluir
+          </button>
+        </div> -->
+
+        <div *ngIf="searchType === 'fipe'">
+          <div class="form-group col-md-8">
+            <label>Placa</label>
+            <input type="text" class="form-control" [(ngModel)]="newLicensePlate">
+          </div>
+          <br />
+          <button class="btn btn-primary" (click)="attachVehiclePlate()">
+            Incluir
+          </button>
+        </div>
+
       </div>
     </div>
   </div>

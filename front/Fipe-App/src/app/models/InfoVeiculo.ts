@@ -1,4 +1,4 @@
-export interface InfoVeiculo {
+export interface Vehicle {
   id : number;
   marca: string;
   modelo: string,
